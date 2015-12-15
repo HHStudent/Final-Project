@@ -33,16 +33,13 @@ class Bird(Sprite):
 
 class TopWall(Sprite):
     top = ImageAsset("images/top.png")
-    
     def __init__(self, position):
         super().__init__(TopWall.top, position)
         
 class BottomWall(TopWall):
     bottom = ImageAsset("images/bottom.png")
-    
     def __init__(self, position):
         super().__init__(BottomWall.bottom, position)
-        self.y = y + 130
     
 
 class CrappyApp(App):
