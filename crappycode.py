@@ -12,17 +12,34 @@ class Bird(Sprite):
     def __init__(self, position):
         super().__init__(Bird.asset1, position)
         self.birdy = 350
-        self.gravity = 5
+        self.gravity = .1
+        wallx = 400
+        wally = random.randint(-110, 110)
         CrappyApp.listenKeyEvent("keydown", "space", self.Jump)
 
     def step(self):
-        self.gravity += .2
+        self.gravity += .05
         self.birdy += self.gravity
         self.y = self.birdy
+        
 
     def Jump(self, event):
-        self.birdy -= 15
+        self.birdy -= 20
         self.gravity = .1
+
+class TopWall(Sprite):
+    top = ImageAsset("images/top.png")
+    
+    def __init__(self, position):
+        super().__init__(TopWall.top, position)
+        
+class BottomWall(TopWall):
+    bottom = ImageAsset("images/bottom.png")
+    
+    def __init__(self, position):
+        super().__init__(BottomWall.bottom, position)
+        self.y = y + 130
+    
 
 class CrappyApp(App):
     def __init__(self, width, height):
@@ -31,6 +48,7 @@ class CrappyApp(App):
         bg = Sprite(bg_asset, (0,0))
         Bird((20, 350))
         
+
     def step(self):
         for bird in self.getSpritesbyClass(Bird):
             bird.step()
