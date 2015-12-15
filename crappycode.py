@@ -23,13 +23,12 @@ class Bird(Sprite):
         self.gravity += .05
         self.birdy += self.gravity
         self.y = self.birdy
-        if self.walx == 400:
-            TopWall((self.wallx, self.wally))
-        """
         TopWall((self.wallx, self.wally))
-        #BottomWall((self.wallx, bottomwally))
         self.wallx -= 5
-"""
+        #TopWall((self.wallx, self.wally))
+        #BottomWall((self.wallx, bottomwally))
+        #self.wallx -= 5
+
     def Jump(self, event):
         self.birdy -= 20
         self.gravity = .1
