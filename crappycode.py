@@ -12,8 +12,10 @@ class Bird(Sprite):
     def __init__(self, position):
         super().__init__(Bird.asset1, position)
         self.birdy = 350
+        CrappyApp.listenKeyEvent("keydown", "space", self.Jump)
         
-        
+    def Jump(self, event):
+        self.birdy += 5
 
 
 class CrappyApp(App):
