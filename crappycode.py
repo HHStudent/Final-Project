@@ -22,7 +22,7 @@ class Bird(Sprite):
         self.gravity += .05
         self.birdy += self.gravity
         self.y = self.birdy
-        Wall((self.wallx, self.wally))
+        TopWall((self.wallx, self.wally))
         self.wallx -= 10
 
     def Jump(self, event):
@@ -49,7 +49,6 @@ class CrappyApp(App):
         bg_asset = ImageAsset("images/background.png")
         bg = Sprite(bg_asset, (0,0))
         Bird((20, 350))
-        TopWall((200, -400))
         
 
     def step(self):
