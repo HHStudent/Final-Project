@@ -13,9 +13,13 @@ class Bird(Sprite):
         super().__init__(Bird.asset1, position)
         self.birdy = 350
         CrappyApp.listenKeyEvent("keydown", "space", self.Jump)
-        
+
+    def step(self):
+        self.y = self.birdy
+
     def Jump(self, event):
-        self.birdy += 5
+        self.birdy -= 5
+        self.SetImage(asset2)
 
 
 class CrappyApp(App):
@@ -23,7 +27,11 @@ class CrappyApp(App):
         super().__init__(width, height)
         bg_asset = ImageAsset("images/background.png")
         bg = Sprite(bg_asset, (0,0))
-        Bird((0, 350))
+        Bird((20, 350))
+        
+    def step(self):
+        for bird in self.getSpritesbyClass(Bird):
+            bird.step()
         
 
 
