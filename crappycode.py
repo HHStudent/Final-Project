@@ -11,7 +11,8 @@ class Bird(Sprite):
     
     def __init__(self, position):
         super().__init__(Bird.asset1, position)
-        self.vy = y
+        self.birdy = 350
+        
         
 
 
