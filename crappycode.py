@@ -16,7 +16,7 @@ class Bird(Sprite):
         self.gravity = .1
         self.wallx = 400
         self.wally = random.randint(-400, 0)
-        bottomwally = self.wally - 130
+        #bottomwally = self.wally - 130
         CrappyApp.listenKeyEvent("keydown", "space", self.Jump)
 
     def step(self):
@@ -24,8 +24,8 @@ class Bird(Sprite):
         self.birdy += self.gravity
         self.y = self.birdy
         TopWall((self.wallx, self.wally))
-        BottomWall((self.wallx, bottomwally))
-        self.wallx -= 10
+        #BottomWall((self.wallx, bottomwally))
+        self.wallx -= 5
 
     def Jump(self, event):
         self.birdy -= 20
