@@ -3,6 +3,7 @@ Name: Dimitri Somoff
 Final Project: Flappy bird remake "Crappy Bird"
 """
 from ggame import App, Color, LineStyle, Sprite, ImageAsset, Frame
+import random
 
 class Bird(Sprite):
     asset1 = ImageAsset("images/0.png")
@@ -13,15 +14,16 @@ class Bird(Sprite):
         super().__init__(Bird.asset1, position)
         self.birdy = 350
         self.gravity = .1
-        wallx = 400
-        wally = random.randint(-110, 110)
+        self.wallx = 400
+        self.wally = random.randint(-400, 0)
         CrappyApp.listenKeyEvent("keydown", "space", self.Jump)
 
     def step(self):
         self.gravity += .05
         self.birdy += self.gravity
         self.y = self.birdy
-        
+        Wall((self.wallx, self.wally))
+        self.wallx -= 10
 
     def Jump(self, event):
         self.birdy -= 20
@@ -47,6 +49,7 @@ class CrappyApp(App):
         bg_asset = ImageAsset("images/background.png")
         bg = Sprite(bg_asset, (0,0))
         Bird((20, 350))
+        TopWall((200, -400))
         
 
     def step(self):
