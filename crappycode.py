@@ -36,7 +36,7 @@ class TopWall(Sprite):
     def __init__(self, position):
         super().__init__(TopWall.top, position)
         
-class BottomWall(TopWall):
+class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
     def __init__(self, position):
         super().__init__(BottomWall.bottom, position)
