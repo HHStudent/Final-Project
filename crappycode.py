@@ -11,7 +11,7 @@ class TopWall(Sprite):
         super().__init__(TopWall.top, position)
         
     def step(self):
-        self.wallx -= 5
+        self.x -= 5
         
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
@@ -40,7 +40,6 @@ class Bird(Sprite):
         self.birdy += self.gravity
         self.y = self.birdy
         self.spawnwalls()
-        self.TopWall.step()
         #for tops in self.getSpritesbyClass(TopWall):
         #    tops.step()
         #for bottoms in self.getSpritesbyClass(BottomWall):
@@ -78,6 +77,8 @@ class CrappyApp(App):
     def step(self):
         for bird in self.getSpritesbyClass(Bird):
             bird.step()
+        for tops in self.getSpritesbyClass(TopWall):
+            tops.step()
         
 
 myapp = CrappyApp(400, 708)
