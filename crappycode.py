@@ -5,6 +5,11 @@ Final Project: Flappy bird remake "Crappy Bird"
 from ggame import App, Color, LineStyle, Sprite, ImageAsset, Frame
 import random
 
+def spawnwalls():
+    if self.wallx == 400:
+        TopWall((self.wallx, self.wally))
+        BottomWall((self.wallx, self.bottomwally))
+
 class Bird(Sprite):
     asset1 = ImageAsset("images/0.png")
     asset2 = ImageAsset("images/1.png")
@@ -23,10 +28,8 @@ class Bird(Sprite):
         self.gravity += .05
         self.birdy += self.gravity
         self.y = self.birdy
-        TopWall((self.wallx, self.wally))
-        self.wallx -= 5
+        spawnwalls()
         #TopWall((self.wallx, self.wally))
-        #BottomWall((self.wallx, bottomwally))
         #self.wallx -= 5
 
     def Jump(self, event):
