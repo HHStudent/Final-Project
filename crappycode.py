@@ -40,10 +40,11 @@ class Bird(Sprite):
         self.birdy += self.gravity
         self.y = self.birdy
         self.spawnwalls()
-        for tops in self.getSpritesbyClass(TopWall):
-            tops.step()
-        for bottoms in self.getSpritesbyClass(BottomWall):
-            bottoms.step()
+        self.TopWall.step()
+        #for tops in self.getSpritesbyClass(TopWall):
+        #    tops.step()
+        #for bottoms in self.getSpritesbyClass(BottomWall):
+        #    bottoms.step()
         #TopWall((self.wallx, self.wally))
         #self.wallx -= 5
 
