@@ -5,10 +5,21 @@ Final Project: Flappy bird remake "Crappy Bird"
 from ggame import App, Color, LineStyle, Sprite, ImageAsset, Frame
 import random
 
-def spawnwalls():
-    if self.wallx == 400:
-        TopWall((self.wallx, self.wally))
-        BottomWall((self.wallx, self.bottomwally))
+class TopWall(Sprite):
+    top = ImageAsset("images/top.png")
+    def __init__(self, position):
+        super().__init__(TopWall.top, position)
+        
+    def step(self):
+        self.wallx -= 5
+        
+class BottomWall(Sprite):
+    bottom = ImageAsset("images/bottom.png")
+    def __init__(self, position):
+        super().__init__(BottomWall.bottom, position)
+        
+    def step(self):
+        self.wallx -= 5
 
 class Bird(Sprite):
     asset1 = ImageAsset("images/0.png")
@@ -20,15 +31,19 @@ class Bird(Sprite):
         self.birdy = 350
         self.gravity = .1
         self.wallx = 400
-        self.wally = random.randint(-400, 0)
-        #bottomwally = self.wally - 130
+        self.wally = random.randint(-420, 0)
+        self.bottomwally = self.wally + 625
         CrappyApp.listenKeyEvent("keydown", "space", self.Jump)
 
     def step(self):
         self.gravity += .05
         self.birdy += self.gravity
         self.y = self.birdy
-        spawnwalls()
+        self.spawnwalls()
+        for tops in self.getSpritesbyClass(TopWall):
+            tops.step()
+        for bottoms in self.getSpritesbyClass(BottomWall):
+            bottoms.step()
         #TopWall((self.wallx, self.wally))
         #self.wallx -= 5
 
@@ -36,15 +51,19 @@ class Bird(Sprite):
         self.birdy -= 20
         self.gravity = .1
 
-class TopWall(Sprite):
-    top = ImageAsset("images/top.png")
-    def __init__(self, position):
-        super().__init__(TopWall.top, position)
-        
-class BottomWall(Sprite):
-    bottom = ImageAsset("images/bottom.png")
-    def __init__(self, position):
-        super().__init__(BottomWall.bottom, position)
+    def spawnwalls(self):
+        if self.wallx == 400:
+            TopWall((self.wallx, self.wally))
+            BottomWall((self.wallx, self.bottomwally))
+            self.wallx -= 5
+        #elif self.wallx == 300:
+         #   self.wallx == 400
+         #   TopWall((self.wallx, self.wally))
+            #BottomWall((self.wallx, self.bottomwally))
+        else:
+            self.wallx -= 5
+
+
     
 
 class CrappyApp(App):
@@ -58,6 +77,7 @@ class CrappyApp(App):
     def step(self):
         for bird in self.getSpritesbyClass(Bird):
             bird.step()
+        
 
 myapp = CrappyApp(400, 708)
 myapp.run()
