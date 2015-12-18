@@ -75,8 +75,8 @@ class CrappyApp(App):
     def step(self):
         for bird in self.getSpritesbyClass(Bird):
             bird.step()
-        #for birds in self.getSpritesbyClass(TopWall):
-        #    birds.step()
+        for birds in self.getSpritesbyClass(TopWall):
+            TopWall.step()
         #for bottoms in self.getSpritesbyClass(BottomWall):
         #    bottoms.step()
         
