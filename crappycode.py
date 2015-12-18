@@ -5,14 +5,18 @@ Final Project: Flappy bird remake "Crappy Bird"
 from ggame import App, Color, LineStyle, Sprite, ImageAsset, Frame
 import random
 
+wals = 0
+bottomwals = wals + 625
+
 class TopWall(Sprite):
     top = ImageAsset("images/top.png")
     def __init__(self, position):
         super().__init__(TopWall.top, position)
         
     def step(self):
-        if self.x <= 0:
-            self.y = random.randint(-420, 0)
+        if self.x <= -30:
+            wals = random.randint(-420, 0)
+            self.y = wals
             self.x = 400
         self.x -= 3
 
@@ -22,8 +26,8 @@ class BottomWall(Sprite):
         super().__init__(BottomWall.bottom, position)
         
     def step(self):
-        if self.x <= 30:
-            self.y = random.randint(-420, 0)
+        if self.x <= -30:
+            self.y = bottomwals
             self.x = 400
         self.x -= 3
 
