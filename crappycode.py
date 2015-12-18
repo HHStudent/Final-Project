@@ -12,6 +12,7 @@ class TopWall(Sprite):
         
     def step(self):
         if self.x <= 0:
+            self.y = random.randint(-420, 0)
             self.x = 400
         self.x -= 3
 
@@ -21,7 +22,8 @@ class BottomWall(Sprite):
         super().__init__(BottomWall.bottom, position)
         
     def step(self):
-        if self.x <= 0:
+        if self.x <= 30:
+            self.y = random.randint(-420, 0)
             self.x = 400
         self.x -= 3
 
