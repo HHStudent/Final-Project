@@ -11,7 +11,7 @@ class TopWall(Sprite):
         super().__init__(TopWall.top, position)
         
     def step(self):
-        self.x -= 1.5
+        self.x -= 2
 
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
@@ -19,7 +19,7 @@ class BottomWall(Sprite):
         super().__init__(BottomWall.bottom, position)
         
     def step(self):
-        self.x -= 1.5
+        self.x -= 2
 
 class Bird(Sprite):
     asset1 = ImageAsset("images/0.png")
@@ -42,7 +42,7 @@ class Bird(Sprite):
         if self.wallx <= 0:
             self.wallx = 400
         self.spawnwalls()
-        self.wallx -= 1.5
+        self.wallx -= 2
         #for tops in self.getSpritesbyClass(TopWall):
         #    tops.step()
         #for bottoms in self.getSpritesbyClass(BottomWall):
