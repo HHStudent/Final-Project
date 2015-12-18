@@ -6,6 +6,7 @@ from ggame import App, Color, LineStyle, Sprite, ImageAsset, Frame
 import random
 
 wals = 0
+bottomwals = 0
 
 class TopWall(Sprite):
     top = ImageAsset("images/top.png")
@@ -28,6 +29,7 @@ class BottomWall(Sprite):
     def step(self):
         if self.x <= -30:
             self.y = bottomwals
+            print(bottomwals)
             self.x = 400
         self.x -= 3
 
