@@ -51,7 +51,7 @@ class Bird(Sprite):
         
 
     def Jump(self, event):
-        self.birdy -= 30
+        self.birdy -= 50
         self.gravity = .1
 
     def spawnwalls(self):
