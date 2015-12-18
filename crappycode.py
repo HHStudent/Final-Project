@@ -36,7 +36,7 @@ class Bird(Sprite):
         CrappyApp.listenKeyEvent("keydown", "space", self.Jump)
 
     def step(self):
-        self.gravity += .1
+        self.gravity += .15
         self.birdy += self.gravity
         self.y = self.birdy
         if self.wallx <= 0:
