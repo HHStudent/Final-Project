@@ -43,12 +43,6 @@ class Bird(Sprite):
             self.wallx = 400
         self.spawnwalls()
         self.wallx -= 3
-        #for tops in self.getSpritesbyClass(TopWall):
-        #    tops.step()
-        #for bottoms in self.getSpritesbyClass(BottomWall):
-        #    bottoms.step()
-        #TopWall((self.wallx, self.wally))
-        
 
     def Jump(self, event):
         self.birdy -= 50
@@ -60,13 +54,6 @@ class Bird(Sprite):
             self.bottomwally = self.wally + 625
             TopWall((self.wallx, self.wally))
             BottomWall((self.wallx, self.bottomwally))
-        #elif self.wallx == 300:
-         #   self.wallx == 400
-         #   TopWall((self.wallx, self.wally))
-            #BottomWall((self.wallx, self.bottomwally))
-
-
-    
 
 class CrappyApp(App):
     def __init__(self, width, height):
@@ -74,7 +61,6 @@ class CrappyApp(App):
         bg_asset = ImageAsset("images/background.png")
         bg = Sprite(bg_asset, (0,0))
         Bird((20, 350))
-        
 
     def step(self):
         for bird in self.getSpritesbyClass(Bird):
