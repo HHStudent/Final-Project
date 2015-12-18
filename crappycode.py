@@ -12,6 +12,7 @@ class TopWall(Sprite):
     top = ImageAsset("images/top.png")
     def __init__(self, position):
         super().__init__(TopWall.top, position)
+        self.topy = y
         
     def step(self):
         if self.x <= -30:
@@ -28,7 +29,7 @@ class BottomWall(Sprite):
         
     def step(self):
         if self.x <= -30:
-            self.y = TopWall.y + 625
+            self.y = self.topy + 625
             self.x = 400
         self.x -= 3
 
