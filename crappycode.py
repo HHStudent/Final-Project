@@ -10,8 +10,8 @@ class TopWall(Sprite):
     def __init__(self, position):
         super().__init__(TopWall.top, position)
         
-    def step(self):
-        self.x -= 2
+    #def step(self):
+    #    self.x -= 2
 """    
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
@@ -36,7 +36,7 @@ class Bird(Sprite):
         CrappyApp.listenKeyEvent("keydown", "space", self.Jump)
 
     def step(self):
-        self.gravity += .05
+        self.gravity += .1
         self.birdy += self.gravity
         self.y = self.birdy
         #self.spawnwalls()
@@ -44,7 +44,7 @@ class Bird(Sprite):
         #    tops.step()
         #for bottoms in self.getSpritesbyClass(BottomWall):
         #    bottoms.step()
-        #TopWall((self.wallx, self.wally))
+        TopWall((self.wallx, self.wally))
         #self.wallx -= 5
 
     def Jump(self, event):
@@ -74,8 +74,8 @@ class CrappyApp(App):
     def step(self):
         for bird in self.getSpritesbyClass(Bird):
             bird.step()
-        for tops in self.getSpritesbyClass(TopWall):
-            tops.step()
+        #for tops in self.getSpritesbyClass(TopWall):
+        #    tops.step()
         #for bottoms in self.getSpritesbyClass(BottomWall):
         #    bottoms.step()
         
