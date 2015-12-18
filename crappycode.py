@@ -11,6 +11,8 @@ class TopWall(Sprite):
         super().__init__(TopWall.top, position)
         
     def step(self):
+        if self.x <= 0:
+            self.x = 400
         self.x -= 3
 
 class BottomWall(Sprite):
@@ -19,6 +21,8 @@ class BottomWall(Sprite):
         super().__init__(BottomWall.bottom, position)
         
     def step(self):
+        if self.x <= 0:
+            self.x = 400
         self.x -= 3
 
 class Bird(Sprite):
@@ -39,10 +43,10 @@ class Bird(Sprite):
         self.gravity += .15
         self.birdy += self.gravity
         self.y = self.birdy
-        if self.wallx <= 0:
-            self.wallx = 400
+        #if self.wallx <= 0:
+        #    self.wallx = 400
         self.spawnwalls()
-        self.wallx -= 3
+        #self.wallx -= 3
 
     def Jump(self, event):
         self.birdy -= 50
@@ -54,6 +58,7 @@ class Bird(Sprite):
             self.bottomwally = self.wally + 625
             TopWall((self.wallx, self.wally))
             BottomWall((self.wallx, self.bottomwally))
+        
 
 class CrappyApp(App):
     def __init__(self, width, height):
