@@ -28,8 +28,7 @@ class BottomWall(Sprite):
         
     def step(self):
         if self.x <= -30:
-            self.y = bottomwals
-            print(bottomwals)
+            self.y = TopWall.y + 625
             self.x = 400
         self.x -= 3
 
