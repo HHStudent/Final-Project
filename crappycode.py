@@ -46,7 +46,7 @@ class Bird(Sprite):
         #if self.wallx <= 0:
         #    self.wallx = 400
         self.spawnwalls()
-        #self.wallx -= 3
+        self.wallx -= 3
 
     def Jump(self, event):
         self.birdy -= 50
