@@ -54,8 +54,6 @@ class Bird(Sprite):
         self.gravity += .15
         self.birdy += self.gravity
         self.y = self.birdy
-        if self.wallx <= 0:
-            self.wallx = 400
         self.spawnwalls()
         self.wallx -= 3
 
@@ -69,7 +67,6 @@ class Bird(Sprite):
             self.bottomwally = self.wally + 625
             TopWall((self.wallx, self.wally))
             BottomWall((self.wallx, self.bottomwally))
-        
 
 class CrappyApp(App):
     def __init__(self, width, height):
