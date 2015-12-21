@@ -12,14 +12,15 @@ class TopWall(Sprite):
     top = ImageAsset("images/top.png")
     def __init__(self, position):
         super().__init__(TopWall.top, position)
-        self.topy = y
         
     def step(self):
+        """
         if self.x <= -30:
             wals = random.randint(-420, 0)
             bottomwals = wals + 625
             self.y = wals
             self.x = 400
+        """
         self.x -= 3
 
 class BottomWall(Sprite):
@@ -28,9 +29,11 @@ class BottomWall(Sprite):
         super().__init__(BottomWall.bottom, position)
         
     def step(self):
+        """
         if self.x <= -30:
             self.y = self.topy + 625
             self.x = 400
+        """
         self.x -= 3
 
 class Bird(Sprite):
@@ -51,8 +54,8 @@ class Bird(Sprite):
         self.gravity += .15
         self.birdy += self.gravity
         self.y = self.birdy
-        #if self.wallx <= 0:
-        #    self.wallx = 400
+        if self.wallx <= 0:
+            self.wallx = 400
         self.spawnwalls()
         self.wallx -= 3
 
