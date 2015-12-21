@@ -28,7 +28,8 @@ class BottomWall(Sprite):
         
     def step(self):
         if self.x <= -100:
-            self.y = TopWall.y + 625
+            wals = random.randint(-420, 0)
+            self.y = wals + 625
             self.x = 400
         self.x -= 3
 
