@@ -14,22 +14,12 @@ class TopWall(Sprite):
         super().__init__(TopWall.top, position)
         
     def step(self):
-        if self.x <= -100:
-            self.destroy()
+        #if self.x <= -100:
         #    wals = random.randint(-420, 0)
         #    bottomwals = wals + 625
         #    self.y = wals
         #    self.x = 400
         self.x -= 3
-        
-    def destroy(self):
-        """
-        Call the `ggame.Sprite.destroy` method to prevent the sprite from being displayed,
-        or checked in collision detection. If you only want to prevent a sprite from being
-        displayed, set the `ggame.Sprite.visible` attribute to `False`.
-        """
-        App._remove(self)
-        self.GFX.destroy()
 
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
