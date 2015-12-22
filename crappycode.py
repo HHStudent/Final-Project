@@ -15,10 +15,11 @@ class TopWall(Sprite):
         
     def step(self):
         if self.x <= -100:
-            wals = random.randint(-420, 0)
-            bottomwals = wals + 625
-            self.y = wals
-            self.x = 400
+            self.destroy()
+        #    wals = random.randint(-420, 0)
+        #    bottomwals = wals + 625
+        #    self.y = wals
+        #    self.x = 400
         self.x -= 3
 
 class BottomWall(Sprite):
@@ -28,9 +29,10 @@ class BottomWall(Sprite):
         
     def step(self):
         if self.x <= -100:
-            wals = random.randint(-420, 0)
-            self.y = wals + 625
-            self.x = 400
+            self.destroy()
+        #    wals = random.randint(-420, 0)
+        #    self.y = wals + 625
+        #    self.x = 400
         self.x -= 3
 
 class Bird(Sprite):
