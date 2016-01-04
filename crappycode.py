@@ -91,8 +91,8 @@ class Bird(Sprite):
         if self.wallx == 400:
             self.wally = random.randint(-420, 0)
             self.bottomwally = self.wally + 625
-            TopWall((self.wallx, self.wally))
-            BottomWall((self.wallx, self.bottomwally))
+            TopWall((self.wallx, -201))
+            BottomWall((self.wallx, 424))
 
 class CrappyApp(App):
     def __init__(self, width, height):
