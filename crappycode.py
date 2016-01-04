@@ -14,7 +14,20 @@ class TopWall(Sprite):
         super().__init__(TopWall.top, position)
         
     def step(self):
-        #if self.x <= -100:
+        if self.x <= -100:
+            self.y = -420
+        elif self.x <= -100 and self.y == -420:
+            self.y = -25
+        elif self.x <= -100 and self.y == -25:
+            self.y = -290
+        elif self.x <= -100 and self.y == -290:
+            self.y = -135
+        elif self.x <= -100 and self.y == -135:
+            self.y = -400
+        elif self.x <= -100 and self.y == -400:
+            self.y = -200
+        elif self.x <= -100 and self.y == -200:
+            self.y = -420
         #    wals = random.randint(-420, 0)
         #    bottomwals = wals + 625
         #    self.y = wals
@@ -27,7 +40,20 @@ class BottomWall(Sprite):
         super().__init__(BottomWall.bottom, position)
         
     def step(self):
-        #if self.x <= -100:
+        if self.x <= -100:
+            self.y = 205
+        elif self.x <= -100 and self.y == 205:
+            self.y = 600
+        elif self.x <= -100 and self.y == 600:
+            self.y = 335
+        elif self.x <= -100 and self.y == 335:
+            self.y = 490
+        elif self.x <= -100 and self.y == 490:
+            self.y = 225
+        elif self.x <= -100 and self.y == 225:
+            self.y = 425
+        elif self.x <= -100 and self.y == 425:
+            self.y = 205
         #    self.destroy()
         #    wals = random.randint(-420, 0)
         #    self.y = wals + 625
