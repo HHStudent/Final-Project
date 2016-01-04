@@ -78,8 +78,8 @@ class Bird(Sprite):
         self.gravity += .15
         self.birdy += self.gravity
         self.y = self.birdy
-        if self.wallx <= 0:
-            self.wallx = 400
+        #if self.wallx <= 0:
+        #    self.wallx = 400
         self.spawnwalls()
         self.wallx -= 3
 
