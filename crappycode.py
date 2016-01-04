@@ -93,8 +93,6 @@ class Bird(Sprite):
 
     def spawnwalls(self):
         if self.wallx == 400:
-            self.wally = random.randint(-420, 0)
-            self.bottomwally = self.wally + 625
             TopWall((self.wallx, -201))
             BottomWall((self.wallx, 424))
 
