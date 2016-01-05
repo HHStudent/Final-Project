@@ -7,6 +7,7 @@ import random
 
 wals = 0
 bottomwals = 0
+iswalls = True
 
 class TopWall(Sprite):
     top = ImageAsset("images/top.png")
@@ -40,8 +41,12 @@ class TopWall(Sprite):
             if len(collides):
                 self.visible = False
                 self.destroy()
+                iswalls = False
             else:
                 self.x -= 3
+        if iswalls == False:
+            self.visible = False
+            self.destroy()
 
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
@@ -75,8 +80,12 @@ class BottomWall(Sprite):
             if len(collides):
                 self.visible = False
                 self.destroy()
+                iswalls = False
             else:
                 self.x -= 3
+        if iswalls == False:
+            self.visible = False
+            self.destroy()
 
 class Bird(Sprite):
     asset1 = ImageAsset("images/0.png")
