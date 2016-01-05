@@ -41,7 +41,7 @@ class TopWall(Sprite):
             if len(collides):
                 self.visible = False
                 self.destroy()
-                iswalls = False
+                #iswalls = False
             else:
                 self.x -= 3
         #if iswalls == False:
@@ -80,7 +80,7 @@ class BottomWall(Sprite):
             if len(collides):
                 self.visible = False
                 self.destroy()
-                iswalls = False
+                #iswalls = False
             else:
                 self.x -= 3
         #if iswalls == False:
