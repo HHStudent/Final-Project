@@ -114,7 +114,7 @@ class Bird(Sprite):
             self.die()
         if len(collides1):
             self.die()
-        if self.y <= -30:
+        if self.y <= -35:
             self.die()
         if self.y >= 708:
             self.die()
@@ -123,6 +123,7 @@ class Bird(Sprite):
         self.visible = False
         DeadBird((self.x, self.y))
         self.destroy()
+        
 
 class DeadBird(Sprite):
     
