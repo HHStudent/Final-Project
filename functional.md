@@ -6,7 +6,7 @@
 
 Introduction / Summary
 
-This project is a clone of the well-known and much-hated mobile application Flappy Bird. Let’s start with some history. Flappy Bird was first uploaded in 2014. After becoming a hit, it was quickly generating lots of profit. With profit came attention, and with attention came hate. Lots of it. So much hate, actually, that the original app was taken down 28 days later. Fans were literally sending death threats to the creator of this simple, yet impossibly difficult app. Missing the simple joys, I have decided to undertake the noble task of creating a clone, albeit an easier one. I do not wish to receive death threats, which is why my clone is slightly easier, although no less fun. I wouldn’t call myself a hero, but someone else definitely should.
+This project is a clone of the well-known and much-hated mobile application Flappy Bird. Let’s start with some history. Flappy Bird was first uploaded in 2014. After becoming a hit, it was quickly generating lots of profit. With profit came attention, and with attention came hate. Lots of it. So much hate, actually, that the original app was taken down 28 days later. Fans were literally sending death threats to the creator of this simple, yet impossibly difficult app. Missing the simple joys of this game, I have decided to undertake the noble task of creating a clone, albeit an easier one. I do not wish to receive death threats, which is why my clone is slightly easier, although no less fun. I wouldn’t call myself a hero, but someone else definitely should.
 
 Access
 
