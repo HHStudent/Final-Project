@@ -95,6 +95,8 @@ class Bird(Sprite):
                 self.die()
             if self.y <= -30:
                 self.die()
+            if self.y >= 708:
+                self.die()
             
 
     def Jump(self, event):
