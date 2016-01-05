@@ -2,7 +2,7 @@
 Name: Dimitri Somoff
 Final Project: Flappy bird remake "Crappy Bird"
 """
-from ggame import App, Color, LineStyle, Sprite, ImageAsset, Frame
+from ggame import App, Color, LineStyle, Sprite, ImageAsset, Frame, SoundAsset
 import random
 
 wals = 0
@@ -86,6 +86,9 @@ class Bird(Sprite):
         self.y = self.birdy
         self.spawnwalls()
         self.wallx -= 3
+        if self.visible:
+            if self.collidingWith(self.TopWall):
+                self.explode()
 
     def Jump(self, event):
         self.birdy -= 50
@@ -95,6 +98,22 @@ class Bird(Sprite):
         if self.wallx == 400:
             TopWall((self.wallx, -201))
             BottomWall((self.wallx, 424))
+            
+    def die(self):
+        self.visible = False
+        DeadBird(self.position)
+
+class DeadBird(Sprite):
+    
+    asset = ImageAsset("images/dead.png")
+    boomasset = SoundAsset("sounds/explosion2.mp3")
+    
+    def __init__(self, position):
+        super().__init__(ExplosionBig.asset, position)
+        #self.image = 0
+        #self.center = (0.5, 0.5)
+        self.boom = Sound(ExplosionBig.boomasset)
+        self.boom.play()
 
 class CrappyApp(App):
     def __init__(self, width, height):
