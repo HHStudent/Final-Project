@@ -35,15 +35,12 @@ class TopWall(Sprite):
         elif self.x <= -100 and self.y == -200:
             self.y = -420
             self.x = 400
-        #self.x -= 3
         if self.visible == True:
             collides = self.collidingWithSprites(DeadBird)
             if len(collides):
                 self.x = 20
             else:
                 self.x -= 3
-                
-            
 
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
@@ -72,7 +69,12 @@ class BottomWall(Sprite):
         elif self.x <= -100 and self.y == 425:
             self.y = 205
             self.x = 400
-        self.x -= 3
+        if self.visible == True:
+            collides = self.collidingWithSprites(DeadBird)
+            if len(collides):
+                self.x = 20
+            else:
+                self.x -= 3
 
 class Bird(Sprite):
     asset1 = ImageAsset("images/0.png")
