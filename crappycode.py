@@ -35,7 +35,15 @@ class TopWall(Sprite):
         elif self.x <= -100 and self.y == -200:
             self.y = -420
             self.x = 400
-        self.x -= 3
+        #self.x -= 3
+        if self.visible == True:
+            collides = self.collidingWithSprites(DeadBird)
+            if len(collides):
+                self.x = x
+            else:
+                self.x -= 3
+                
+            
 
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
@@ -96,8 +104,6 @@ class Bird(Sprite):
         if self.visible == True:
             if self.y <= 10 or self.y >= 665:
                 self.die()
-            #if self.y >= 665:
-            #    self.die()
 
     def Jump(self, event):
         self.birdy -= 50
