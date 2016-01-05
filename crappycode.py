@@ -110,7 +110,7 @@ class Bird(Sprite):
             
     def die(self):
         self.visible = False
-        #DeadBird(self.position)
+        DeadBird(self.position)
 
 class DeadBird(Sprite):
     
