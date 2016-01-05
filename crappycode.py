@@ -107,30 +107,30 @@ class Bird(Sprite):
             TopWall((self.wallx, -201))
             BottomWall((self.wallx, 424))
     
-    def checkalive(self):
-        collides = self.collidingWithSprites(TopWall)
-        collides1 = self.collidingWithSprites(BottomWall)
-        if len(collides):
-            self.die()
-        if len(collides1):
-            self.die()
-        if self.y <= -35:
-            self.die()
-        if self.y >= 708:
-            self.die()
+    #def checkalive(self):
+    #    collides = self.collidingWithSprites(TopWall)
+    #    collides1 = self.collidingWithSprites(BottomWall)
+    #    if len(collides):
+    #        self.die()
+    #    if len(collides1):
+    #        self.die()
+    #    if self.y <= -35:
+    #        self.die()
+    #    if self.y >= 708:
+    #        self.die()
         
-    def die(self):
-        self.visible = False
-        DeadBird((self.x, self.y))
-        self.destroy()
+    #def die(self):
+    #    self.visible = False
+    #    DeadBird((self.x, self.y))
+    #    self.destroy()
         
 
-class DeadBird(Sprite):
-    
-    asset = ImageAsset("images/dead.png")
-
-    def __init__(self, position):
-        super().__init__(DeadBird.asset, position)
+#class DeadBird(Sprite):
+#    
+#    asset = ImageAsset("images/dead.png")
+#
+#    def __init__(self, position):
+#        super().__init__(DeadBird.asset, position)
 
 
 class CrappyApp(App):
@@ -143,7 +143,7 @@ class CrappyApp(App):
     def step(self):
         for bird in self.getSpritesbyClass(Bird):
             bird.step()
-            bird.checkalive()
+            #bird.checkalive()
         for birds in self.getSpritesbyClass(TopWall):
             birds.step()
         for bottoms in self.getSpritesbyClass(BottomWall):
