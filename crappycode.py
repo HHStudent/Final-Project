@@ -115,14 +115,14 @@ class Bird(Sprite):
 class DeadBird(Sprite):
     
     asset = ImageAsset("images/dead.png")
-    boomasset = SoundAsset("sounds/explosion2.mp3")
+    #boomasset = SoundAsset("sounds/explosion2.mp3")
     
     def __init__(self, position):
         super().__init__(DeadBird.asset, position)
         #self.image = 0
         self.center = (0.5, 0.5)
-        self.boom = Sound(ExplosionBig.boomasset)
-        self.boom.play()
+        #self.boom = Sound(ExplosionBig.boomasset)
+        #self.boom.play()
 
 class CrappyApp(App):
     def __init__(self, width, height):
