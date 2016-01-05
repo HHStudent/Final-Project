@@ -44,9 +44,9 @@ class TopWall(Sprite):
                 iswalls = False
             else:
                 self.x -= 3
-        if iswalls == False:
-            self.visible = False
-            self.destroy()
+        #if iswalls == False:
+        #    self.visible = False
+        #    self.destroy()
 
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
@@ -83,9 +83,9 @@ class BottomWall(Sprite):
                 iswalls = False
             else:
                 self.x -= 3
-        if iswalls == False:
-            self.visible = False
-            self.destroy()
+        #if iswalls == False:
+        #    self.visible = False
+        #    self.destroy()
 
 class Bird(Sprite):
     asset1 = ImageAsset("images/0.png")
