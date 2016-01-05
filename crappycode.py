@@ -122,16 +122,16 @@ class Bird(Sprite):
         
     def die(self):
         self.visible = False
-    #    DeadBird((self.x, self.y))
+        DeadBird((self.x, self.y))
         self.destroy()
         
 
-#class DeadBird(Sprite):
-#    
-#    asset = ImageAsset("images/dead.png")
-#
-#    def __init__(self, position):
-#        super().__init__(DeadBird.asset, position)
+class DeadBird(Sprite):
+    
+    asset = ImageAsset("images/dead.png")
+
+    def __init__(self, position):
+        super().__init__(DeadBird.asset, position)
 
 
 class CrappyApp(App):
