@@ -86,17 +86,18 @@ class Bird(Sprite):
         self.y = self.birdy
         self.spawnwalls()
         self.wallx -= 3
-        collides = self.collidingWithSprites(TopWall)
-        collides1 = self.collidingWithSprites(BottomWall)
-        if len(collides):
-            self.die()
-        if len(collides1):
-            self.die()
+        
         if self.visible == True:
+            collides = self.collidingWithSprites(TopWall)
+            collides1 = self.collidingWithSprites(BottomWall)
+            if len(collides):
+                self.die()
+            if len(collides1):
+                self.die()
             if self.y <= -30:
                 self.die()
-        #if self.y >= 708:
-        #    self.die()
+            if self.y >= 708:
+                self.die()
             
 
     def Jump(self, event):
