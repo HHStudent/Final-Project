@@ -2,14 +2,22 @@
 
 ## Design Specification
 
-The design specificaiton is a counterpart to the Functional Speciffication. Where a functional specification concerns itself
-with inputs and outputs from the program, or the *experience* of a user running the program, the design specification is concerned with decisions that the engineer and programmer must make during its creation.
+Tools and Framework
 
-The design specification should include information like:
+I used http://runpython.com to write this program. I imported ggame, and from that I imported App, Color, LineStyle, Sprite, ImageAsset, and Frame.
 
-* What tools or frameworks will you use to build the project (e.g. http://runpython.com or ggame)?
-* What language will you use for coding (usually Python 3)?
-* For every element of the Functional Specification, what code will need to be written to support it?
-* What data will be stored or manipulated by the program? How will it be encoded and organized?
-* Describe the logic and/or code behind every interaction with the user, and behind everything displayed.
-* If your program uses an unusual or notable *algorithm*, what is the algorithm and how does it work?
+Language
+
+I used Python 3
+
+Elements, Logic, and Code
+
+There are many elements to my project, and they all need code to support them and get them to execute what they need to do. I did those using classes and step functions. First, the bird. I made a class for the bird with all the qualities I wanted it to have. I also wrote a step function that responds to the space bar being pressed. Each time it is pressed, the bird goes up 30 pixels. Next, the walls. For the walls, I had them have random y values each time they are spawned and a starting x value of 400, the right edge of the screen. Each frame, it moves 3 pixels to the left. When the x value is -100, it resets to 400 to create infinite walls. Collisions with walls, coded in the birds class function, result in a game over.
+
+Data Storage and Manipulation
+
+My program does not store or manipulate data. It simply runs the code necessary for the game to be played. In future versions I might add a feature that stores the highest score, but for now I am sticking to the basics.
+
+Unusual or Notable Algorithms
+
+One algorithm that I used was to create the idea of gravity. As you know if you have ever dropped a rock off a high place, the rate of falling is not constant. I incorporated this into my code with gravity and acceleration. The base acceleration starts at falling .5 pixels per frame. Each time the frame is called, this value increases by .1. This ends up with a display that when falling, the bird seems to go faster the longer it falls. Also, the acceleration is reset to .5 each time the spacebar is pressed and the bird jumps, to prevent infinitely growing acceleration.
