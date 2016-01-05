@@ -38,7 +38,8 @@ class TopWall(Sprite):
         if self.visible == True:
             collides = self.collidingWithSprites(DeadBird)
             if len(collides):
-                self.x = 20
+                self.visible = False
+                self.destroy()
             else:
                 self.x -= 3
 
@@ -72,7 +73,8 @@ class BottomWall(Sprite):
         if self.visible == True:
             collides = self.collidingWithSprites(DeadBird)
             if len(collides):
-                self.x = 20
+                self.visible = False
+                self.destroy()
             else:
                 self.x -= 3
 
