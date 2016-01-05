@@ -93,7 +93,7 @@ class Bird(Sprite):
                 self.die()
             if len(collides1):
                 self.die()
-            if self.birdy <= -10:
+            if self.y <= -30:
                 self.die()
             
 
