@@ -13,6 +13,7 @@ class TopWall(Sprite):
     top = ImageAsset("images/top.png")
     def __init__(self, position):
         super().__init__(TopWall.top, position)
+        self.iswalls = True
         
     def step(self):
         if self.x <= -100 and self.y == -201:
@@ -45,6 +46,7 @@ class TopWall(Sprite):
             else:
                 self.x -= 3
         #if iswalls == False:
+        #    self.x = 20
         #    self.visible = False
         #    self.destroy()
 
@@ -52,6 +54,7 @@ class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
     def __init__(self, position):
         super().__init__(BottomWall.bottom, position)
+        self.iswalls = True
         
     def step(self):
         if self.x <= -100 and self.y == 424:
