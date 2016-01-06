@@ -98,6 +98,8 @@ class BottomWall(Sprite):
                 #iswalls = False
             else:
                 self.x -= 3
+        if globvar == 1:
+            self.x = 40
         #if iswalls == False:
         #    self.visible = False
         #    self.destroy()
