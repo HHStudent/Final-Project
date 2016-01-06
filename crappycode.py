@@ -8,10 +8,15 @@ import random
 wals = 0
 bottomwals = 0
 globvar = 0
+scorevar = 0
 
 def set_globvar_to_one():
     global globvar
     globvar = 1
+
+def add_score_var():
+    global scorevar
+    scorevar += 1
 
 class TopWall(Sprite):
     top = ImageAsset("images/top.png")
@@ -22,24 +27,31 @@ class TopWall(Sprite):
         if self.x <= -100 and self.y == -201:
             self.y = -420
             self.x = 400
+            add_score_var()
         elif self.x <= -100 and self.y == -420:
             self.y = -25
             self.x = 400
+            add_score_var()
         elif self.x <= -100 and self.y == -25:
             self.y = -290
             self.x = 400
+            add_score_var()
         elif self.x <= -100 and self.y == -290:
             self.y = -135
             self.x = 400
+            add_score_var()
         elif self.x <= -100 and self.y == -135:
             self.y = -400
             self.x = 400
+            add_score_var()
         elif self.x <= -100 and self.y == -400:
             self.y = -200
             self.x = 400
+            add_score_var()
         elif self.x <= -100 and self.y == -200:
             self.y = -420
             self.x = 400
+            add_score_var()
         if self.visible == True:
             collides = self.collidingWithSprites(DeadBird)
             if len(collides):
@@ -49,6 +61,7 @@ class TopWall(Sprite):
                 self.x -= 3
         if globvar == 1:
             self.x = 30
+            print(scorevar)
 
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
