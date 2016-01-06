@@ -53,6 +53,8 @@ class TopWall(Sprite):
                 set_globvar_to_one()
             else:
                 self.x -= 3
+        if globvar == 1:
+            self.x = 40
         #if iswalls == False:
         #    self.x = 20
         #    self.visible = False
@@ -166,7 +168,7 @@ class CrappyApp(App):
             birds.step()
         for bottoms in self.getSpritesbyClass(BottomWall):
             bottoms.step()
-        print(globvar())
+        #print(globvar)
         
 
 myapp = CrappyApp(400, 708)
