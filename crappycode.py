@@ -166,6 +166,7 @@ class CrappyApp(App):
             birds.step()
         for bottoms in self.getSpritesbyClass(BottomWall):
             bottoms.step()
+        print(globvar())
         
 
 myapp = CrappyApp(400, 708)
