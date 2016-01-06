@@ -43,12 +43,12 @@ class TopWall(Sprite):
         if self.visible == True:
             collides = self.collidingWithSprites(DeadBird)
             if len(collides):
-                self.x = 40
+                self.x = 30
                 set_globvar_to_one()
             else:
                 self.x -= 3
         if globvar == 1:
-            self.x = 40
+            self.x = 30
 
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
@@ -81,12 +81,12 @@ class BottomWall(Sprite):
         if self.visible == True:
             collides = self.collidingWithSprites(DeadBird)
             if len(collides):
-                self.x = 40
+                self.x = 30
                 set_globvar_to_one()
             else:
                 self.x -= 3
         if globvar == 1:
-            self.x = 40
+            self.x = 30
 
 class Bird(Sprite):
     asset1 = ImageAsset("images/0.png")
