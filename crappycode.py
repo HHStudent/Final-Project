@@ -7,7 +7,6 @@ import random
 
 wals = 0
 bottomwals = 0
-#iswalls = True
 globvar = 0
 
 def set_globvar_to_one():
@@ -18,10 +17,7 @@ class TopWall(Sprite):
     top = ImageAsset("images/top.png")
     def __init__(self, position):
         super().__init__(TopWall.top, position)
-        #self.iswalls = True
-        #if iswalls == False:
-        #    self.x = 20
-        
+
     def step(self):
         if self.x <= -100 and self.y == -201:
             self.y = -420
@@ -47,18 +43,12 @@ class TopWall(Sprite):
         if self.visible == True:
             collides = self.collidingWithSprites(DeadBird)
             if len(collides):
-                #self.visible = False
-                #self.destroy()
                 self.x = 40
                 set_globvar_to_one()
             else:
                 self.x -= 3
         if globvar == 1:
             self.x = 40
-        #if iswalls == False:
-        #    self.x = 20
-        #    self.visible = False
-        #    self.destroy()
 
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
@@ -91,18 +81,12 @@ class BottomWall(Sprite):
         if self.visible == True:
             collides = self.collidingWithSprites(DeadBird)
             if len(collides):
-                #self.visible = False
-                #self.destroy()
                 self.x = 40
                 set_globvar_to_one()
-                #iswalls = False
             else:
                 self.x -= 3
         if globvar == 1:
             self.x = 40
-        #if iswalls == False:
-        #    self.visible = False
-        #    self.destroy()
 
 class Bird(Sprite):
     asset1 = ImageAsset("images/0.png")
@@ -143,12 +127,11 @@ class Bird(Sprite):
         if self.wallx == 400:
             TopWall((self.wallx, -201))
             BottomWall((self.wallx, 424))
-        
+
     def die(self):
         self.visible = False
         DeadBird((self.x, self.y))
         self.destroy()
-        
 
 class DeadBird(Sprite):
     
@@ -156,7 +139,6 @@ class DeadBird(Sprite):
 
     def __init__(self, position):
         super().__init__(DeadBird.asset, position)
-
 
 class CrappyApp(App):
     def __init__(self, width, height):
@@ -172,8 +154,6 @@ class CrappyApp(App):
             birds.step()
         for bottoms in self.getSpritesbyClass(BottomWall):
             bottoms.step()
-        #print(globvar)
-        
 
 myapp = CrappyApp(400, 708)
 myapp.run()
