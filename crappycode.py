@@ -7,15 +7,20 @@ import random
 
 wals = 0
 bottomwals = 0
-iswalls = True
+#iswalls = True
+globvar = 0
+
+def set_globvar_to_one():
+    global globvar
+    globvar = 1
 
 class TopWall(Sprite):
     top = ImageAsset("images/top.png")
     def __init__(self, position):
         super().__init__(TopWall.top, position)
         #self.iswalls = True
-        if iswalls == False:
-            self.x = 20
+        #if iswalls == False:
+        #    self.x = 20
         
     def step(self):
         if self.x <= -100 and self.y == -201:
@@ -42,8 +47,9 @@ class TopWall(Sprite):
         if self.visible == True:
             collides = self.collidingWithSprites(DeadBird)
             if len(collides):
-                self.visible = False
-                self.destroy()
+                #self.visible = False
+                #self.destroy()
+                self.x = 20
                 iswalls = False
             else:
                 self.x -= 3
