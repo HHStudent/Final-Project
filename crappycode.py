@@ -61,7 +61,6 @@ class TopWall(Sprite):
                 self.x -= 3
         if globvar == 1:
             self.x = 30
-            print(scorevar)
 
 class BottomWall(Sprite):
     bottom = ImageAsset("images/bottom.png")
@@ -145,6 +144,9 @@ class Bird(Sprite):
         self.visible = False
         DeadBird((self.x, self.y))
         self.destroy()
+        print(scorevar)
+        if scorevar < 10:
+            print("you fucking nigger can't play this shit. Seriously, go to therapy you autistic fuck.")
 
 class DeadBird(Sprite):
     
