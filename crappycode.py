@@ -49,8 +49,8 @@ class TopWall(Sprite):
             if len(collides):
                 #self.visible = False
                 #self.destroy()
-                self.x = 20
-                iswalls = False
+                self.x = 40
+                set_globvar_to_one()
             else:
                 self.x -= 3
         #if iswalls == False:
