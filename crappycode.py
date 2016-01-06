@@ -146,7 +146,7 @@ class Bird(Sprite):
         self.destroy()
         print(scorevar)
         if scorevar < 1:
-            print("you fucking nigger can't play this shit. Seriously, go to therapy you autistic fuck.")
+            print("try again!")
 
 class DeadBird(Sprite):
     
