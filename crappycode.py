@@ -13,7 +13,9 @@ class TopWall(Sprite):
     top = ImageAsset("images/top.png")
     def __init__(self, position):
         super().__init__(TopWall.top, position)
-        self.iswalls = True
+        #self.iswalls = True
+        if iswalls == False:
+            self.x = 20
         
     def step(self):
         if self.x <= -100 and self.y == -201:
