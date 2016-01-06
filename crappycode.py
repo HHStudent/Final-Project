@@ -91,8 +91,10 @@ class BottomWall(Sprite):
         if self.visible == True:
             collides = self.collidingWithSprites(DeadBird)
             if len(collides):
-                self.visible = False
-                self.destroy()
+                #self.visible = False
+                #self.destroy()
+                self.x = 40
+                set_globvar_to_one()
                 #iswalls = False
             else:
                 self.x -= 3
