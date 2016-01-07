@@ -146,17 +146,23 @@ class Bird(Sprite):
         self.destroy()
         print("Your score was {0}!".format(scorevar))
         if scorevar < 1:
-            print("Wow, you are really bad. Actually, have you ever accomplished anything before?")
+            #print("Wow, you are really bad. Actually, have you ever accomplished anything before?")
+            print("Hint: press the space bar to fly!")
         elif scorevar < 2:
-            print("Are you even trying? I seriously hope this is a joke and you aren't this incompetent.")
+            #print("Are you even trying? I seriously hope this is a joke and you aren't this incompetent.")
+            print("Nice one! Try again!")
         elif scorevar < 5:
-            print("I guess you aren't terrible. Still, try harder for once.")
+            #print("I guess you aren't terrible. Still, try harder for once.")
+            print("Awesome! You are really getting the hang of this!")
         elif scorevar < 10:
-            print("Wow, you got a halfway decent score. I'm sure your parents are proud.")
+            #print("Wow, you got a halfway decent score. I'm sure your parents are proud.")
+            print("You are amazing!")
         elif scorevar < 20:
-            print("Finally, a double digit score. I didn't know you had it in you.")
+            #print("Finally, a double digit score. I didn't know you had it in you.")
+            print("Very impressive! You are a pro.")
         else:
-            print("Tryhard. Go do something worthwhile with your life.")
+            #print("Tryhard. Go do something worthwhile with your life.")
+            print("You are the best at this game!")
 
 class DeadBird(Sprite):
     
