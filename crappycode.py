@@ -146,13 +146,13 @@ class Bird(Sprite):
         self.destroy()
         print("Your score was {0}!".format(scorevar))
         if scorevar < 1:
-            print("try again!")
+            print("Wow, you are really bad. Actually, have you ever accomplished anything before?")
+        elif scorevar < 2:
+            print("Are you even trying? I seriously hope this is a joke and you aren't this incompetent.")
+        elif scorevar < 5:
+            print("I guess you aren't terrible. Still, try harder for once.")
         elif scorevar < 10:
-            print("h")
-        elif scorevar < 10:
-            print("h")
-        elif scorevar < 10:
-            print("h")
+            print("Wow, you got a halfway decent score. I'm sure your parents are proud.")
         
 
 class DeadBird(Sprite):
