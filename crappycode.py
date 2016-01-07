@@ -153,7 +153,10 @@ class Bird(Sprite):
             print("I guess you aren't terrible. Still, try harder for once.")
         elif scorevar < 10:
             print("Wow, you got a halfway decent score. I'm sure your parents are proud.")
-        
+        elif scorevar < 20:
+            print("Finally, a double digit score. I didn't know you had it in you.")
+        else:
+            print("Tryhard. Go do something worthwhile with your life.")
 
 class DeadBird(Sprite):
     
