@@ -144,7 +144,7 @@ class Bird(Sprite):
         self.visible = False
         DeadBird((self.x, self.y))
         self.destroy()
-        print(scorevar)
+        print("Your score was {0}!".scorevar)
         if scorevar < 1:
             print("try again!")
 
