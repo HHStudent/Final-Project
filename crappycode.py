@@ -147,6 +147,13 @@ class Bird(Sprite):
         print("Your score was {0}!".format(scorevar))
         if scorevar < 1:
             print("try again!")
+        elif scorevar < 10:
+            print("h")
+        elif scorevar < 10:
+            print("h")
+        elif scorevar < 10:
+            print("h")
+        
 
 class DeadBird(Sprite):
     
